@@ -1,0 +1,8 @@
+C:\SFEDU\IntSystems\Lab5\Production\bin\Debug\Production.exe.config
+C:\SFEDU\IntSystems\Lab5\Production\bin\Debug\Production.exe
+C:\SFEDU\IntSystems\Lab5\Production\bin\Debug\Production.pdb
+C:\SFEDU\IntSystems\Lab5\Production\obj\Debug\Production.csprojAssemblyReference.cache
+C:\SFEDU\IntSystems\Lab5\Production\obj\Debug\Production.Properties.Resources.resources
+C:\SFEDU\IntSystems\Lab5\Production\obj\Debug\Production.csproj.GenerateResource.cache
+C:\SFEDU\IntSystems\Lab5\Production\obj\Debug\Production.exe
+C:\SFEDU\IntSystems\Lab5\Production\obj\Debug\Production.pdb
