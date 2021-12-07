@@ -7,13 +7,13 @@ using System.IO;
 
 namespace Production
 {
-    class Parsing
+    public class Parsing
     {
-        public static List<Fact> ParseFacts(String fileName)
+        public static List<Fact> ParseFacts(string fileName)
         {
             List<Fact> facts = new List<Fact>();
-            if (File.Exists(fileName))
-            {
+            try
+            { 
                 foreach (var line in File.ReadLines(fileName))
                 {
                     var splitted = line.Split(';');
@@ -33,12 +33,38 @@ namespace Production
                     Fact fact = new Fact(description, number, factLayer);
                     facts.Add(fact);
                 }
-                return facts;
             }
-            else
+            catch (FileNotFoundException)
             {
-                throw new Exception("No such file");
+                // Say file not found
             }
+
+            return facts;
+        }
+
+        public static List<Rule> ParseRules(string fileName, List<Fact> facts)
+        {
+            List<Rule> rules = new List<Rule>();
+            try
+            {
+                foreach (var line in File.ReadLines(fileName))
+                {
+                    var words = line.Split(';');
+                    rules.Add(
+                        new Rule(
+                            int.Parse(words[0].Substring(1)), 
+                            words.Skip(1).Take(words.Length - 2).Select(x => facts.Find(f => f.number == int.Parse(x.Substring(1)))).ToList(), 
+                            facts.Find(f => f.number == int.Parse(words.Last().Substring(1)))
+                            )
+                        );
+                }
+            }
+            catch (FileNotFoundException)
+            {
+                // Say file not found
+            }
+
+            return rules;
         }
     }
 }

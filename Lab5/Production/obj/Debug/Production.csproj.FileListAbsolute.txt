@@ -6,3 +6,12 @@ C:\SFEDU\IntSystems\Lab5\Production\obj\Debug\Production.Properties.Resources.re
 C:\SFEDU\IntSystems\Lab5\Production\obj\Debug\Production.csproj.GenerateResource.cache
 C:\SFEDU\IntSystems\Lab5\Production\obj\Debug\Production.exe
 C:\SFEDU\IntSystems\Lab5\Production\obj\Debug\Production.pdb
+C:\Users\Admin\Source\Repos\ProductionSystem\Lab5\Production\bin\Debug\Production.exe.config
+C:\Users\Admin\Source\Repos\ProductionSystem\Lab5\Production\bin\Debug\Production.exe
+C:\Users\Admin\Source\Repos\ProductionSystem\Lab5\Production\bin\Debug\Production.pdb
+C:\Users\Admin\Source\Repos\ProductionSystem\Lab5\Production\obj\Debug\Production.csproj.AssemblyReference.cache
+C:\Users\Admin\Source\Repos\ProductionSystem\Lab5\Production\obj\Debug\Production.Properties.Resources.resources
+C:\Users\Admin\Source\Repos\ProductionSystem\Lab5\Production\obj\Debug\Production.csproj.GenerateResource.cache
+C:\Users\Admin\Source\Repos\ProductionSystem\Lab5\Production\obj\Debug\Production.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Source\Repos\ProductionSystem\Lab5\Production\obj\Debug\Production.exe
+C:\Users\Admin\Source\Repos\ProductionSystem\Lab5\Production\obj\Debug\Production.pdb

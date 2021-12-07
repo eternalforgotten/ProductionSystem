@@ -6,17 +6,31 @@ using System.Threading.Tasks;
 
 namespace Production
 {
-    enum FactLayer { INITIAL = 0, SECOND, THIRD, FINAL, UNDEFINED}
-    class Fact
+    public enum FactLayer { INITIAL = 0, SECOND, THIRD, FINAL, UNDEFINED}
+
+    public class Fact
     {
-        public String description;
+        public string description;
         public int number;
         public FactLayer layer;
-        public Fact(String description, int number, FactLayer layer)
+        public Fact(string description, int number, FactLayer layer)
         {
             this.description = description;
             this.number = number;
             this.layer = layer;
+        }
+    }
+
+    public class Rule
+    {
+        public int id;
+        public List<Fact> premises;
+        public Fact production; 
+        public Rule(int id, List<Fact> premises, Fact production)
+        {
+            this.id = id;
+            this.premises = premises;
+            this.production = production; 
         }
     }
 }
