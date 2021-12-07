@@ -8,7 +8,7 @@ namespace Production
 {
     public enum FactLayer { INITIAL = 0, SECOND, THIRD, FINAL, UNDEFINED}
 
-    public class Fact
+    public class Fact : IComparable
     {
         public string description;
         public int number;
@@ -18,6 +18,12 @@ namespace Production
             this.description = description;
             this.number = number;
             this.layer = layer;
+        }
+
+        public int CompareTo(object other)
+        {
+            var fact = other as Fact;
+            return 1;
         }
     }
 

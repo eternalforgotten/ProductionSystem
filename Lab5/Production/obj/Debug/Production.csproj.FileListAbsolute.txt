@@ -24,3 +24,4 @@ C:\SFEDU\IntSystems\ProductionSystem\Lab5\Production\obj\Debug\Production.csproj
 C:\SFEDU\IntSystems\ProductionSystem\Lab5\Production\obj\Debug\Production.exe
 C:\SFEDU\IntSystems\ProductionSystem\Lab5\Production\obj\Debug\Production.pdb
 C:\SFEDU\IntSystems\ProductionSystem\Lab5\Production\obj\Debug\Production.Form1.resources
+C:\Users\Admin\Source\Repos\ProductionSystem\Lab5\Production\obj\Debug\Production.Form1.resources
