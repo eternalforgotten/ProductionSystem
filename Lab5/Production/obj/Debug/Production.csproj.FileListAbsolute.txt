@@ -15,3 +15,12 @@ C:\Users\Admin\Source\Repos\ProductionSystem\Lab5\Production\obj\Debug\Productio
 C:\Users\Admin\Source\Repos\ProductionSystem\Lab5\Production\obj\Debug\Production.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Source\Repos\ProductionSystem\Lab5\Production\obj\Debug\Production.exe
 C:\Users\Admin\Source\Repos\ProductionSystem\Lab5\Production\obj\Debug\Production.pdb
+C:\SFEDU\IntSystems\ProductionSystem\Lab5\Production\bin\Debug\Production.exe.config
+C:\SFEDU\IntSystems\ProductionSystem\Lab5\Production\bin\Debug\Production.exe
+C:\SFEDU\IntSystems\ProductionSystem\Lab5\Production\bin\Debug\Production.pdb
+C:\SFEDU\IntSystems\ProductionSystem\Lab5\Production\obj\Debug\Production.csprojAssemblyReference.cache
+C:\SFEDU\IntSystems\ProductionSystem\Lab5\Production\obj\Debug\Production.Properties.Resources.resources
+C:\SFEDU\IntSystems\ProductionSystem\Lab5\Production\obj\Debug\Production.csproj.GenerateResource.cache
+C:\SFEDU\IntSystems\ProductionSystem\Lab5\Production\obj\Debug\Production.exe
+C:\SFEDU\IntSystems\ProductionSystem\Lab5\Production\obj\Debug\Production.pdb
+C:\SFEDU\IntSystems\ProductionSystem\Lab5\Production\obj\Debug\Production.Form1.resources

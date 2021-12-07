@@ -13,10 +13,12 @@ namespace Production
     public partial class Form1 : Form
     {
         List<Fact> facts;
+        List<Rule> rules;
         public Form1()
         {
             InitializeComponent();
             facts = Parsing.ParseFacts("facts.txt");
+            rules = Parsing.ParseRules("rules.txt", facts);
         }
     }
 }
