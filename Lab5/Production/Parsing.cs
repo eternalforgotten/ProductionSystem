@@ -53,7 +53,7 @@ namespace Production
                     rules.Add(
                         new Rule(
                             int.Parse(words[0].Substring(1)), 
-                            words.Skip(1).Take(words.Length - 2).Select(x => facts.Find(f => f.number == int.Parse(x.Substring(1)))).ToList(), 
+                            words[1].Split(',').Select(x => facts.Find(f => f.number == int.Parse(x.Substring(1)) && ((int)f.layer) == x[0] - 'A')).ToList(), 
                             facts.Find(f => f.number == int.Parse(words.Last().Substring(1)))
                             )
                         );
