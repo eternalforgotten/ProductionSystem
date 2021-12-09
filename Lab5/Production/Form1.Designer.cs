@@ -31,7 +31,6 @@
             this.InitialFacts = new System.Windows.Forms.CheckedListBox();
             this.Result = new System.Windows.Forms.ListBox();
             this.ForwardButton = new System.Windows.Forms.Button();
-            this.Recipe = new System.Windows.Forms.RichTextBox();
             this.Finals = new System.Windows.Forms.ListBox();
             this.BackwardButton = new System.Windows.Forms.Button();
             this.CanCookButton = new System.Windows.Forms.Button();
@@ -43,7 +42,7 @@
             this.InitialFacts.Location = new System.Drawing.Point(12, 13);
             this.InitialFacts.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.InitialFacts.Name = "InitialFacts";
-            this.InitialFacts.Size = new System.Drawing.Size(239, 671);
+            this.InitialFacts.Size = new System.Drawing.Size(239, 625);
             this.InitialFacts.TabIndex = 0;
             // 
             // Result
@@ -52,13 +51,13 @@
             this.Result.ItemHeight = 20;
             this.Result.Location = new System.Drawing.Point(648, 12);
             this.Result.Name = "Result";
-            this.Result.Size = new System.Drawing.Size(377, 664);
+            this.Result.Size = new System.Drawing.Size(377, 624);
             this.Result.TabIndex = 1;
             this.Result.SelectedIndexChanged += new System.EventHandler(this.Result_SelectedIndexChanged);
             // 
             // ForwardButton
             // 
-            this.ForwardButton.Location = new System.Drawing.Point(1382, 12);
+            this.ForwardButton.Location = new System.Drawing.Point(1031, 13);
             this.ForwardButton.Name = "ForwardButton";
             this.ForwardButton.Size = new System.Drawing.Size(127, 49);
             this.ForwardButton.TabIndex = 2;
@@ -66,27 +65,19 @@
             this.ForwardButton.UseVisualStyleBackColor = true;
             this.ForwardButton.Click += new System.EventHandler(this.ForwardButton_Click);
             // 
-            // Recipe
-            // 
-            this.Recipe.Location = new System.Drawing.Point(1112, 13);
-            this.Recipe.Name = "Recipe";
-            this.Recipe.Size = new System.Drawing.Size(248, 664);
-            this.Recipe.TabIndex = 3;
-            this.Recipe.Text = "";
-            // 
             // Finals
             // 
             this.Finals.FormattingEnabled = true;
             this.Finals.ItemHeight = 20;
             this.Finals.Location = new System.Drawing.Point(258, 13);
             this.Finals.Name = "Finals";
-            this.Finals.Size = new System.Drawing.Size(384, 664);
+            this.Finals.Size = new System.Drawing.Size(384, 624);
             this.Finals.TabIndex = 4;
             this.Finals.SelectedIndexChanged += new System.EventHandler(this.Finals_SelectedIndexChanged);
             // 
             // BackwardButton
             // 
-            this.BackwardButton.Location = new System.Drawing.Point(1382, 67);
+            this.BackwardButton.Location = new System.Drawing.Point(1031, 68);
             this.BackwardButton.Name = "BackwardButton";
             this.BackwardButton.Size = new System.Drawing.Size(127, 50);
             this.BackwardButton.TabIndex = 5;
@@ -96,7 +87,7 @@
             // 
             // CanCookButton
             // 
-            this.CanCookButton.Location = new System.Drawing.Point(1382, 123);
+            this.CanCookButton.Location = new System.Drawing.Point(1031, 124);
             this.CanCookButton.Name = "CanCookButton";
             this.CanCookButton.Size = new System.Drawing.Size(127, 50);
             this.CanCookButton.TabIndex = 6;
@@ -108,11 +99,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1521, 698);
+            this.ClientSize = new System.Drawing.Size(1168, 651);
             this.Controls.Add(this.CanCookButton);
             this.Controls.Add(this.BackwardButton);
             this.Controls.Add(this.Finals);
-            this.Controls.Add(this.Recipe);
             this.Controls.Add(this.ForwardButton);
             this.Controls.Add(this.Result);
             this.Controls.Add(this.InitialFacts);
@@ -128,7 +118,6 @@
         private System.Windows.Forms.CheckedListBox InitialFacts;
         private System.Windows.Forms.ListBox Result;
         private System.Windows.Forms.Button ForwardButton;
-        private System.Windows.Forms.RichTextBox Recipe;
         private System.Windows.Forms.ListBox Finals;
         private System.Windows.Forms.Button BackwardButton;
         private System.Windows.Forms.Button CanCookButton;
