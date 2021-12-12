@@ -33,33 +33,33 @@
             this.ForwardButton = new System.Windows.Forms.Button();
             this.Finals = new System.Windows.Forms.ListBox();
             this.BackwardButton = new System.Windows.Forms.Button();
-            this.CanCookButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // InitialFacts
             // 
             this.InitialFacts.FormattingEnabled = true;
-            this.InitialFacts.Location = new System.Drawing.Point(12, 13);
-            this.InitialFacts.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.InitialFacts.Location = new System.Drawing.Point(11, 10);
             this.InitialFacts.Name = "InitialFacts";
-            this.InitialFacts.Size = new System.Drawing.Size(239, 625);
+            this.InitialFacts.Size = new System.Drawing.Size(213, 497);
             this.InitialFacts.TabIndex = 0;
             // 
             // Result
             // 
             this.Result.FormattingEnabled = true;
-            this.Result.ItemHeight = 20;
-            this.Result.Location = new System.Drawing.Point(648, 12);
+            this.Result.ItemHeight = 16;
+            this.Result.Location = new System.Drawing.Point(576, 10);
+            this.Result.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Result.Name = "Result";
-            this.Result.Size = new System.Drawing.Size(377, 624);
+            this.Result.Size = new System.Drawing.Size(336, 500);
             this.Result.TabIndex = 1;
             this.Result.SelectedIndexChanged += new System.EventHandler(this.Result_SelectedIndexChanged);
             // 
             // ForwardButton
             // 
-            this.ForwardButton.Location = new System.Drawing.Point(1031, 13);
+            this.ForwardButton.Location = new System.Drawing.Point(916, 10);
+            this.ForwardButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ForwardButton.Name = "ForwardButton";
-            this.ForwardButton.Size = new System.Drawing.Size(127, 49);
+            this.ForwardButton.Size = new System.Drawing.Size(113, 39);
             this.ForwardButton.TabIndex = 2;
             this.ForwardButton.Text = "Forward";
             this.ForwardButton.UseVisualStyleBackColor = true;
@@ -68,45 +68,35 @@
             // Finals
             // 
             this.Finals.FormattingEnabled = true;
-            this.Finals.ItemHeight = 20;
-            this.Finals.Location = new System.Drawing.Point(258, 13);
+            this.Finals.ItemHeight = 16;
+            this.Finals.Location = new System.Drawing.Point(229, 10);
+            this.Finals.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Finals.Name = "Finals";
-            this.Finals.Size = new System.Drawing.Size(384, 624);
+            this.Finals.Size = new System.Drawing.Size(342, 500);
             this.Finals.TabIndex = 4;
             this.Finals.SelectedIndexChanged += new System.EventHandler(this.Finals_SelectedIndexChanged);
             // 
             // BackwardButton
             // 
-            this.BackwardButton.Location = new System.Drawing.Point(1031, 68);
+            this.BackwardButton.Location = new System.Drawing.Point(916, 54);
+            this.BackwardButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BackwardButton.Name = "BackwardButton";
-            this.BackwardButton.Size = new System.Drawing.Size(127, 50);
+            this.BackwardButton.Size = new System.Drawing.Size(113, 40);
             this.BackwardButton.TabIndex = 5;
             this.BackwardButton.Text = "Backward";
             this.BackwardButton.UseVisualStyleBackColor = true;
             this.BackwardButton.Click += new System.EventHandler(this.BackwardButton_Click);
             // 
-            // CanCookButton
-            // 
-            this.CanCookButton.Location = new System.Drawing.Point(1031, 124);
-            this.CanCookButton.Name = "CanCookButton";
-            this.CanCookButton.Size = new System.Drawing.Size(127, 50);
-            this.CanCookButton.TabIndex = 6;
-            this.CanCookButton.Text = "Can cook?";
-            this.CanCookButton.UseVisualStyleBackColor = true;
-            this.CanCookButton.Click += new System.EventHandler(this.CanCookButton_Click);
-            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1168, 651);
-            this.Controls.Add(this.CanCookButton);
+            this.ClientSize = new System.Drawing.Size(1038, 521);
             this.Controls.Add(this.BackwardButton);
             this.Controls.Add(this.Finals);
             this.Controls.Add(this.ForwardButton);
             this.Controls.Add(this.Result);
             this.Controls.Add(this.InitialFacts);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -120,7 +110,6 @@
         private System.Windows.Forms.Button ForwardButton;
         private System.Windows.Forms.ListBox Finals;
         private System.Windows.Forms.Button BackwardButton;
-        private System.Windows.Forms.Button CanCookButton;
     }
 }
 

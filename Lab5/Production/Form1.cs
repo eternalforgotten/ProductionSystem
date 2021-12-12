@@ -69,23 +69,31 @@ namespace Production
 
         private void BackwardButton_Click(object sender, EventArgs e)
         {
+            Result.Items.Clear();
             if (Finals.SelectedItem == null)
+            {
+                Result.Items.Add("Так а че за блюдо то надо?");
                 return;
+            }
+
 
             var text = (string)Finals.SelectedItem;
 
             List<(Fact, Fact)> set = new List<(Fact, Fact)>() { (facts.Find(f => f.description == text), null) };
-
+            List<Fact> dishInitials = new List<Fact>();
             for (int i = (int)FactLayer.FINAL; i >= 0; --i)
             {
                 List<(Fact, Fact)> newSet = new List<(Fact, Fact)>(set);
                 foreach (var fact in set.Where(f => (int)f.Item1.layer == i))
                 {
+                    if (fact.Item1.layer == FactLayer.INITIAL && !dishInitials.Contains(fact.Item1))
+                    {
+                        dishInitials.Add(fact.Item1);
+                    }
                     foreach (var rule in rules.Where(r => r.production == fact.Item1))
                     {
                         newSet.AddRange(
                             rule.premises
-                            //.Where(p => !newSet.Select(s => s.Item1).Contains(p))
                             .Select(x => (x, fact.Item1))
                             .ToArray());
                     }
@@ -93,59 +101,16 @@ namespace Production
                 set = new List<(Fact, Fact)>(newSet);
             }
 
-            Result.Items.Clear();
-
-            PrettyPrint(new List<Fact>() { facts.Find(f => f.description == text) }, set);
-
-            /* Just initial facts, we need some explanation
-
-            List<Fact> set = new List<Fact>() { facts.Find(f => f.description == text) };
-
-            while (!set.All(elem => elem.layer == FactLayer.INITIAL))
+            bool isEnough = dishInitials.All(elem => InitialFacts.CheckedItems.Contains(elem.description));
+            if (!isEnough)
             {
-                List<Fact> newSet = new List<Fact>(set); 
-                foreach (var fact in set.Where(f => f.layer != FactLayer.INITIAL))
-                {
-                    newSet.AddRange(rules.Find(r => r.production == fact).premises);
-
-                    newSet.Remove(fact);
-
-                    newSet = newSet.Distinct().ToList(); 
-                }
-                set = new List<Fact>(newSet);
+                Result.Items.Add("Блюдо приготовить нельзя");
             }
-
-            Result.Items.Clear();
-            Result.Items.AddRange(set.Select(elem => elem.description).ToArray());
-
-            */
-        }
-
-        private void CanCookButton_Click(object sender, EventArgs e)
-        {
-            if (Finals.SelectedItem == null)
-                return;
-
-            var text = (string)Finals.SelectedItem;
-
-            List<Fact> set = new List<Fact>() { facts.Find(f => f.description == text) };
-
-            while (!set.All(elem => elem.layer == FactLayer.INITIAL))
+            else
             {
-                List<Fact> newSet = new List<Fact>(set);
-                foreach (var fact in set.Where(f => f.layer != FactLayer.INITIAL))
-                {
-                    newSet.AddRange(rules.Find(r => r.production == fact).premises);
-
-                    newSet.Remove(fact);
-
-                    newSet = newSet.Distinct().ToList();
-                }
-                set = new List<Fact>(newSet);
+                PrettyPrint(new List<Fact>() { facts.Find(f => f.description == text) }, set);
             }
-
-            Result.Items.Clear();
-            Result.Items.Add(set.All(elem => InitialFacts.CheckedItems.Contains(elem.description)).ToString());
         }
+            
     }
 }
