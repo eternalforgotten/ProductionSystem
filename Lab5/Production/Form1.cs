@@ -22,7 +22,7 @@ namespace Production
 
             InitialFacts.Items.AddRange((from fact in facts where fact.layer == FactLayer.INITIAL select fact.description).ToArray());
             Finals.Items.AddRange((from fact in facts where fact.layer == FactLayer.FINAL select fact.description).ToArray());
-
+            InitialFacts.CheckOnClick = true;
         }
 
         private void ForwardButton_Click(object sender, EventArgs e)
@@ -39,23 +39,14 @@ namespace Production
             for (int i = 1; i < 4; ++i)
                 foreach (var rule in rules.Where(r => (int)r.production.layer == i))
                     if (rule.premises.All(p => initials.Contains(p)))
-                        initials.Add(rule.production); 
+                        initials.Add(rule.production);
 
-            Result.Items.AddRange((from fact in initials where fact.layer == FactLayer.FINAL select fact.description).ToArray());
-
-        }
-
-        private void Result_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (Result.SelectedItem == null)
-                return;
-
-            var name = (string)Result.SelectedItem;
-        }
-
-        private void Finals_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            var seq = from fact in initials where fact.layer == FactLayer.FINAL select fact.description;
+            if (seq.Count() == 0)
+                Result.Items.Add("Из этих ингредиентов ничего нельзя приготовить");
+            else
+                foreach (var elem in seq)
+                    BackSomething(elem);
         }
 
         private void PrettyPrint(List<Fact> current, List<(Fact, Fact)> all, int tab = (int)FactLayer.FINAL)
@@ -76,8 +67,14 @@ namespace Production
                 return;
             }
 
-
             var text = (string)Finals.SelectedItem;
+
+            BackSomething(text);
+        }
+
+        private void BackSomething(string name)
+        {
+            var text = name;
 
             List<(Fact, Fact)> set = new List<(Fact, Fact)>() { (facts.Find(f => f.description == text), null) };
             List<Fact> dishInitials = new List<Fact>();
@@ -92,6 +89,8 @@ namespace Production
                     }
                     foreach (var rule in rules.Where(r => r.production == fact.Item1))
                     {
+                        if (rule.premises.Select(p => (int)p.layer).Max() >= (int)rule.production.layer)
+                            continue;
                         newSet.AddRange(
                             rule.premises
                             .Select(x => (x, fact.Item1))
@@ -111,6 +110,11 @@ namespace Production
                 PrettyPrint(new List<Fact>() { facts.Find(f => f.description == text) }, set);
             }
         }
-            
+
+        private void SelectAllButton_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < InitialFacts.Items.Count; ++i)
+                InitialFacts.SetItemChecked(i, true);
+        }
     }
 }

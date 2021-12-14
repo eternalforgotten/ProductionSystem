@@ -33,33 +33,34 @@
             this.ForwardButton = new System.Windows.Forms.Button();
             this.Finals = new System.Windows.Forms.ListBox();
             this.BackwardButton = new System.Windows.Forms.Button();
+            this.SelectAllButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // InitialFacts
             // 
             this.InitialFacts.FormattingEnabled = true;
-            this.InitialFacts.Location = new System.Drawing.Point(11, 10);
+            this.InitialFacts.Location = new System.Drawing.Point(12, 81);
+            this.InitialFacts.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.InitialFacts.Name = "InitialFacts";
-            this.InitialFacts.Size = new System.Drawing.Size(213, 497);
+            this.InitialFacts.Size = new System.Drawing.Size(239, 556);
             this.InitialFacts.TabIndex = 0;
             // 
             // Result
             // 
             this.Result.FormattingEnabled = true;
-            this.Result.ItemHeight = 16;
-            this.Result.Location = new System.Drawing.Point(576, 10);
+            this.Result.ItemHeight = 20;
+            this.Result.Location = new System.Drawing.Point(648, 12);
             this.Result.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Result.Name = "Result";
-            this.Result.Size = new System.Drawing.Size(336, 500);
+            this.Result.Size = new System.Drawing.Size(378, 624);
             this.Result.TabIndex = 1;
-            this.Result.SelectedIndexChanged += new System.EventHandler(this.Result_SelectedIndexChanged);
             // 
             // ForwardButton
             // 
-            this.ForwardButton.Location = new System.Drawing.Point(916, 10);
+            this.ForwardButton.Location = new System.Drawing.Point(1030, 12);
             this.ForwardButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ForwardButton.Name = "ForwardButton";
-            this.ForwardButton.Size = new System.Drawing.Size(113, 39);
+            this.ForwardButton.Size = new System.Drawing.Size(127, 49);
             this.ForwardButton.TabIndex = 2;
             this.ForwardButton.Text = "Forward";
             this.ForwardButton.UseVisualStyleBackColor = true;
@@ -68,35 +69,46 @@
             // Finals
             // 
             this.Finals.FormattingEnabled = true;
-            this.Finals.ItemHeight = 16;
-            this.Finals.Location = new System.Drawing.Point(229, 10);
+            this.Finals.ItemHeight = 20;
+            this.Finals.Location = new System.Drawing.Point(258, 12);
             this.Finals.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Finals.Name = "Finals";
-            this.Finals.Size = new System.Drawing.Size(342, 500);
+            this.Finals.Size = new System.Drawing.Size(384, 624);
             this.Finals.TabIndex = 4;
-            this.Finals.SelectedIndexChanged += new System.EventHandler(this.Finals_SelectedIndexChanged);
             // 
             // BackwardButton
             // 
-            this.BackwardButton.Location = new System.Drawing.Point(916, 54);
+            this.BackwardButton.Location = new System.Drawing.Point(1030, 68);
             this.BackwardButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BackwardButton.Name = "BackwardButton";
-            this.BackwardButton.Size = new System.Drawing.Size(113, 40);
+            this.BackwardButton.Size = new System.Drawing.Size(127, 50);
             this.BackwardButton.TabIndex = 5;
             this.BackwardButton.Text = "Backward";
             this.BackwardButton.UseVisualStyleBackColor = true;
             this.BackwardButton.Click += new System.EventHandler(this.BackwardButton_Click);
             // 
+            // SelectAllButton
+            // 
+            this.SelectAllButton.Location = new System.Drawing.Point(12, 12);
+            this.SelectAllButton.Name = "SelectAllButton";
+            this.SelectAllButton.Size = new System.Drawing.Size(239, 62);
+            this.SelectAllButton.TabIndex = 6;
+            this.SelectAllButton.Text = "Select all";
+            this.SelectAllButton.UseVisualStyleBackColor = true;
+            this.SelectAllButton.Click += new System.EventHandler(this.SelectAllButton_Click);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1038, 521);
+            this.ClientSize = new System.Drawing.Size(1168, 651);
+            this.Controls.Add(this.SelectAllButton);
             this.Controls.Add(this.BackwardButton);
             this.Controls.Add(this.Finals);
             this.Controls.Add(this.ForwardButton);
             this.Controls.Add(this.Result);
             this.Controls.Add(this.InitialFacts);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -110,6 +122,7 @@
         private System.Windows.Forms.Button ForwardButton;
         private System.Windows.Forms.ListBox Finals;
         private System.Windows.Forms.Button BackwardButton;
+        private System.Windows.Forms.Button SelectAllButton;
     }
 }
 
