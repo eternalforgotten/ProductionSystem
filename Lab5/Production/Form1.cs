@@ -46,7 +46,7 @@ namespace Production
                 Result.Items.Add("Из этих ингредиентов ничего нельзя приготовить");
             else
                 foreach (var elem in seq)
-                    BackSomething(elem);
+                    BackSomething(elem, true);
         }
 
         private void PrettyPrint(List<Fact> current, List<(Fact, Fact)> all, int tab = (int)FactLayer.FINAL)
@@ -72,12 +72,13 @@ namespace Production
             BackSomething(text);
         }
 
-        private void BackSomething(string name)
+        private void BackSomething(string name, bool flag = false)
         {
             var text = name;
 
             List<(Fact, Fact)> set = new List<(Fact, Fact)>() { (facts.Find(f => f.description == text), null) };
             List<Fact> dishInitials = new List<Fact>();
+            List<Fact> proved = new List<Fact>();
             for (int i = (int)FactLayer.FINAL; i >= 0; --i)
             {
                 List<(Fact, Fact)> newSet = new List<(Fact, Fact)>(set);
@@ -91,6 +92,9 @@ namespace Production
                     {
                         if (rule.premises.Select(p => (int)p.layer).Max() >= (int)rule.production.layer)
                             continue;
+                        if (proved.Contains(rule.production))
+                            continue;
+                        proved.Add(rule.production);
                         newSet.AddRange(
                             rule.premises
                             .Select(x => (x, fact.Item1))
@@ -100,7 +104,7 @@ namespace Production
                 set = new List<(Fact, Fact)>(newSet);
             }
 
-            bool isEnough = dishInitials.All(elem => InitialFacts.CheckedItems.Contains(elem.description));
+            bool isEnough = flag ? true : dishInitials.All(elem => InitialFacts.CheckedItems.Contains(elem.description));
             if (!isEnough)
             {
                 Result.Items.Add("Блюдо приготовить нельзя");
